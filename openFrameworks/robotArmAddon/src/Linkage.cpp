@@ -59,3 +59,14 @@ void PD::Linkage::showXray(){
 void PD::Linkage::disableXray(){
 	showWidget = false;
 }
+
+void PD::Linkage::setWidth(float newWidth){
+	height = newWidth;
+	width = newWidth;
+	link.set(width, height, link.getDepth());
+}
+
+void PD::Linkage::setDepth(float newDepth){
+	depth = newDepth;
+	link.set(link.getWidth(), link.getHeight(), depth);
+}

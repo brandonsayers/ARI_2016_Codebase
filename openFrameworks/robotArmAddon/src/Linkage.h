@@ -13,6 +13,8 @@ namespace PD {
 		void setColor(ofColor);
 		void showXray();
 		void disableXray();
+		void setWidth(float);
+		void setDepth(float);
 
 		ofColor color;
 		float height, width, depth;
