@@ -28,3 +28,18 @@ void ofApp::setup(){
 
 }
 ```
+
+![Demo Arm Usage](./demoUsage.JPG "Demo Arm Usage")
+
+
+
+
+
+
+
+
+
+
+
+
+
