@@ -16,10 +16,11 @@ void ofApp::setup(){
 	gui.add(elbowAngle.set("Elbow Angle", 60, -90, 90));
 	gui.add(foreArmTwistAngle.set("ForeArm Twist", 180, 0, 360));
 	gui.add(wristTiltAngle.set("Wrist Tilt", -45, -90, 90));
-
 	fillLight.setPosition(250, 200, 250);
 	fillLight.setAttenuation(1, .001, 0);
 	keyLight.setAttenuation(1, .0025, 0);
+	cam.setAutoDistance(false);
+	cam.setDistance(1800);
 }
 
 //--------------------------------------------------------------
