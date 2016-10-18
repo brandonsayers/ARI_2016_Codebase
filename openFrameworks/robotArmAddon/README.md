@@ -3,7 +3,7 @@ This is an addon for openframeworks for visualiing a robotic arm.
 
 ![Demo Arm Usage](./demoUsage.JPG "Demo Arm Usage")
 
-## usage
+## Usage
 
 An example is provided in the example folder. To change the default settings for the arm you can use the following functions:
 
@@ -50,7 +50,7 @@ This function is called during `PD::RobotArm::setup()`
 
 ### draw();
 
-Draws the linkage onto the screen. `draw` is called from the parent `RobotArm` class.
+Draws the linkage onto the screen. `draw` is called from the parent `RobotArm` class in `RobotArm::draw()`.
 
 ### setColor(ofColor);
 
@@ -98,7 +98,8 @@ Updates the length of the linkage using `newDepth`. Should be used during setup 
 example:
 
 ```c++
-//inofApp.setup() after setting up arm object
+//in ofApp.setup() after setting up arm object
 float width = ofGetWidth * .12;
 arm.lowerWrist.setDepth(width*.5);
 ```
+
