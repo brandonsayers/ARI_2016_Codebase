@@ -10,10 +10,12 @@ PD::BaseLinkage::~BaseLinkage(){
 
 void PD::BaseLinkage::setRadius(float newRadius){
 	radius = newRadius;
+	cylinder.setRadius(radius);
 }
 
 void PD::BaseLinkage::setHeight(float newHeight){
 	height = newHeight;
+	cylinder.setHeight(height);
 }
 
 void PD::BaseLinkage::setResolution(int newResolution){
