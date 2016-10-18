@@ -18,6 +18,7 @@ void PD::BaseLinkage::setHeight(float newHeight){
 
 void PD::BaseLinkage::setResolution(int newResolution){
 	axisResolution = newResolution;
+	cylinder.setResolutionRadius(axisResolution);
 }
 
 void PD::BaseLinkage::setColor(ofColor newColor){
