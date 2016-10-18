@@ -13,7 +13,6 @@ namespace PD {
 		void setHeight(float); //TODO: Document this
 		void setResolution(int); //TODO: Document this
 		void setColor(ofColor); //TODO: Document this
-		void setup(float);
 		void setup(float, float, bool = true); //default show gizmo
 		void draw();
 		void showXray(); //Turn on alpha to show widget
