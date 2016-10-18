@@ -1,11 +1,7 @@
 # robotArm addon
-<<<<<<< HEAD
-=======
 This is an addon for openframeworks for visualiing a robotic arm.
 
-
 ![Demo Arm Usage](./demoUsage.JPG "Demo Arm Usage")
->>>>>>> origin/development
 
 ## usage
 
@@ -19,10 +15,7 @@ An example is provided in the example folder. To change the default settings for
 ```c++
 //in ofApp.cpp
 void ofApp::setup(){
-<<<<<<< HEAD
 	// code
-=======
->>>>>>> origin/development
 	float width = ofGetWidth() * .12;
 	arm.setup(width);	//this will create an arm with some default sizes
 
@@ -39,18 +32,6 @@ void ofApp::setup(){
 }
 ```
 
-<<<<<<< HEAD
-![Demo Arm Usage](./demoUsage.JPG "Demo Arm Usage")
-
-
-
-
-
-
-
-
-
-=======
 # API
 
 The arm consists of two basic objects: `PD::Linkage` - rectangular linkages, and `PD::BaseLinkage` - for rotational linkages.
@@ -121,8 +102,3 @@ example:
 float width = ofGetWidth * .12;
 arm.lowerWrist.setDepth(width*.5);
 ```
->>>>>>> origin/development
-
-
-
-
