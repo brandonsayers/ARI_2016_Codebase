@@ -1,10 +1,9 @@
 # robotArm addon
 This is an addon for openframeworks for visualiing a robotic arm.
 
-
 ![Demo Arm Usage](./demoUsage.JPG "Demo Arm Usage")
 
-## usage
+## Usage
 
 An example is provided in the example folder. To change the default settings for the arm you can use the following functions:
 
@@ -16,6 +15,7 @@ An example is provided in the example folder. To change the default settings for
 ```c++
 //in ofApp.cpp
 void ofApp::setup(){
+	// code
 	float width = ofGetWidth() * .12;
 	arm.setup(width);	//this will create an arm with some default sizes
 
@@ -50,13 +50,14 @@ This function is called during `PD::RobotArm::setup()`
 
 ### draw();
 
-Draws the linkage onto the screen. `draw` is called from the parent `RobotArm` class.
+Draws the linkage onto the screen. `draw` is called from the parent `RobotArm` class in `RobotArm::draw()`.
 
 ### setColor(ofColor);
 
 Sets the color of the linkage (default purple). Example usage:
 
 ```c++
+//in ofApp::setup()
 arm.setColor(ofColor::blue);
 ```
 
@@ -98,11 +99,73 @@ Updates the length of the linkage using `newDepth`. Should be used during setup 
 example:
 
 ```c++
-//inofApp.setup() after setting up arm object
+//in ofApp.setup() after setting up arm object
 float width = ofGetWidth * .12;
 arm.lowerWrist.setDepth(width*.5);
 ```
 
+## PD::BaseLinkage
 
+The `PD::Linkage` class has the following methods:
 
+### setRadius(float newRadius);
 
+Updates the radius of the linkage with `newRadius`.
+
+example:
+
+```c++
+//in ofApp::setup();
+arm.base.setRadius(22);
+```
+
+### setHeight(float newHeight)
+
+Updates the height of the linkage with `newHeight`.
+
+example:
+
+```c++
+//in ofApp::setup();
+arm.foreArmTwist.setHeight(16);
+```
+
+### setResolution(int newResolution);
+
+Updates the draw resolution (e.g. number of points on the circular base) with `newResolution`. (Note: default resolution is 16)
+
+example:
+
+```c++
+//in ofApp::setup()
+arm.base.setResolution(12);
+```
+
+### setColor(ofColor)
+
+Sets the color of the linkage (default greenYellow). Example usage:
+
+```c++
+//in ofApp::setup()
+arm.setColor(ofColor::red);
+```
+
+### setup(float newRadius, float newHeight, bool turnXRayOn)
+
+This function is called during `PD::RobotArm::setup()`
+
+- `newRadius` <float> - defines the size of the circular base of the rectangular linkage
+- `newHeight` <float> - defines the length of the cylindrical linkage
+- `enableXray` <bool> - enables or disables (disabled on default) showing the xyz gizmo (used for positioning and confirming rotation axis`)
+
+### draw()
+
+Draws the linkage onto the screen. `draw` is called from the parent `RobotArm` class in `RobotArm::draw()`.
+
+### showXray()
+
+Changes the alpha (transparency) for the linkage and enables a flag that draws the xyzWidget. Can be used in a callback function to enable certain (or all) the linkages for debugging.
+
+### show disableXray()
+
+Reverts the alpha (if it has changed) back to 0 transparency and disables the flag that draws the xyzWidget. Can be used with `showXray` to toggle transparency for certain (or all) the linkages for debugging.

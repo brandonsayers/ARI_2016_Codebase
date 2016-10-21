@@ -5,33 +5,26 @@ PD::BaseLinkage::BaseLinkage(){
 	axisResolution = 16; //default resolution
 }
 
-
 PD::BaseLinkage::~BaseLinkage(){
 }
 
 void PD::BaseLinkage::setRadius(float newRadius){
 	radius = newRadius;
+	cylinder.setRadius(radius);
 }
 
 void PD::BaseLinkage::setHeight(float newHeight){
 	height = newHeight;
+	cylinder.setHeight(height);
 }
 
 void PD::BaseLinkage::setResolution(int newResolution){
 	axisResolution = newResolution;
+	cylinder.setResolutionRadius(axisResolution);
 }
 
 void PD::BaseLinkage::setColor(ofColor newColor){
 	color = newColor;
-}
-
-void PD::BaseLinkage::setup(float width){
-	setRadius(width / 4);
-	setHeight(width * 3);
-
-	cylinder.set(radius, height);
-	cylinder.setResolutionRadius(axisResolution);
-
 }
 
 void PD::BaseLinkage::setup(float newRadius, float newHeight, bool turnXRayOn){
