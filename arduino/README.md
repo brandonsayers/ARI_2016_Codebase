@@ -22,4 +22,4 @@ If you installed a previous version of any of the arduino libraries you'll get a
 
 ## RobotArmServo
 
-This library was created as a framework for the real robotic arm using servos in place of stepper motors. (Look here for more info)
+This library was created as a framework for the real robotic arm using servos in place of stepper motors. ([Look here for more info](RobotArmServo/RobotArm.cpp))
